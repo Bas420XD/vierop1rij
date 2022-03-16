@@ -1,12 +1,13 @@
 while (!player1){
-    var player1 = prompt('Speler 1: Enter your name. You will be red.');
+    var player1 = prompt('Speler 1: Voer je naam in. Jij bent rood.');
 };
 var player1Color = 'red';
 
 while (!player2){
-    var player2 = prompt('Player Two: Enter your name. You will be yellow.');
+    var player2 = prompt('Speler 2: Voer je naam in. Jij bent blauw.');
 };
-var player2Color = 'yellow';
+var player2Color = 'blue';
+
 
 // Selectors
 
@@ -20,7 +21,7 @@ const resetBtn = document.querySelector('.reset');
 
 var currentPlayer = 1;
 let winner;
-playerTurn.textContent = `${player1}'s turn!`
+playerTurn.textContent = `${player1} zijn beurt!`
 
 // Log cell coordinates when clicked
 
@@ -44,27 +45,27 @@ function changeColor(e){
             if (currentPlayer === 1){
                 row[0].style.backgroundColor = 'red';
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player1} WINS!!`;
+                    playerTurn.textContent = `${player1} Heeft gewonnen!!`;
                     playerTurn.style.color = player1Color;
-                    return alert(`${player1} WINS!!`);
+                    return alert(`${player1} Heeft gewonnen!!`);
                 }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
-                    return alert('DRAW!');
+                    playerTurn.textContent = 'Gelijkspel!';
+                    return alert('Gelijkspel!');
                 }else{
-                    playerTurn.textContent = `${player2}'s turn`
+                    playerTurn.textContent = `${player2} zijn beurt`;
                     return currentPlayer = 2;
                 }
             }else{
-                row[0].style.backgroundColor = 'yellow';
+                row[0].style.backgroundColor = 'blue';
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player2} WINS!!`;
+                    playerTurn.textContent = `${player2} Heeft gewonnen`;
                     playerTurn.style.color = player2Color;
-                    return alert(`${player2} WINS!!`);
+                    return alert(`${player2} Heeft gewonnen!!`);
                 }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
+                    playerTurn.textContent = 'Gelijkspel!';
                     return alert('DRAW!');
                 }else{
-                    playerTurn.textContent = `${player1}'s turn`;
+                    playerTurn.textContent = `${player1} zijn beurt`;
                     return currentPlayer = 1;
                 }
 
@@ -146,5 +147,5 @@ resetBtn.addEventListener('click', () => {
         slot.style.backgroundColor = 'white';
     });
     playerTurn.style.color = 'black';
-    return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`);
+    return (currentPlayer === 1 ? playerTurn.textContent = `${player1} zijn beurt` : playerTurn.textContent = `${player2} zijn beurt`);
 });
