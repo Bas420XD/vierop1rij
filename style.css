@@ -61,7 +61,7 @@ body {
 
 .reset{
     position: absolute;
-    top:32rem;
+    top:42rem;
     left: 50%;
     transform: translate(-50%);
     width: 100px;
@@ -93,4 +93,22 @@ body {
 
     }
 
+}
+.yangbluediv{
+position: relative;
+    width: 100px;
+    margin-left: 100px;
+}
+.yangblue{
+    width: 400px;
+}
+.yangreddiv{
+    position: relative;
+    width: 100px;
+    margin-left: 1400px;
+    bottom: 520px;
+}
+.yangred{
+    width: 400px;
+    transform: scaleX(-1);
 }
