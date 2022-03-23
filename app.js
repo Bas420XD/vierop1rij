@@ -1,11 +1,11 @@
 while (!player1){
     var player1 = prompt('Speler 1: Voer je naam in. Jij bent rood.');
-};
+}
 var player1Color = 'red';
 
 while (!player2){
     var player2 = prompt('Speler 2: Voer je naam in. Jij bent blauw.');
-};
+}
 var player2Color = 'blue';
 
 
@@ -20,7 +20,6 @@ const resetBtn = document.querySelector('.reset');
 
 
 var currentPlayer = 1;
-let winner;
 playerTurn.textContent = `${player1} zijn beurt!`
 
 // Log cell coordinates when clicked
@@ -29,7 +28,7 @@ for (i = 0; i < tableData.length; i ++){
     tableData[i].addEventListener('click', (e) =>{
         console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
     });
-};
+}
 
 
 // Funtions
@@ -40,7 +39,7 @@ function changeColor(e){
     let row = [];
 
     for (i = 5; i > -1; i--){
-        if (tableRow[i].children[column].style.backgroundColor == 'white'){
+        if (tableRow[i].children[column].style.backgroundColor === 'white'){
             row.push(tableRow[i].children[column]);
             if (currentPlayer === 1){
                 row[0].style.backgroundColor = 'red';
@@ -102,7 +101,7 @@ function verticalCheck(){
             if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col].style.backgroundColor,
                 tableRow[row+2].children[col].style.backgroundColor,tableRow[row+3].children[col].style.backgroundColor)){
                 return true;
-            };
+            }
         }
     }
 }
@@ -149,3 +148,6 @@ resetBtn.addEventListener('click', () => {
     playerTurn.style.color = 'black';
     return (currentPlayer === 1 ? playerTurn.textContent = `${player1} zijn beurt` : playerTurn.textContent = `${player2} zijn beurt`);
 });
+if (currentPlayer === 1){
+    var img = document.getElementById("yangblue");
+    img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeh4DEGXbjtdA4j1NWLJltZO_Ss7sZrw9A6Q&usqp=CAU";}
