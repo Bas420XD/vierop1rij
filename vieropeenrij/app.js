@@ -153,5 +153,5 @@ resetBtn.addEventListener('click', () => {
         slot.style.backgroundColor = 'white';
     });
     playerTurn.style.color = 'black';
-    return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`);
+    return (currentPlayer === 1 ? playerTurn.textContent = `${player1} : zijn beurt` : playerTurn.textContent = `${player2} : zijn beurt`);
 });
