@@ -115,3 +115,11 @@ body{
     background-image: url("img/streetfighterbackground.gif");
     background-size: cover;
 }
+.player1container{
+    position: absolute;
+    top: 50rem;
+}
+.player2container{
+    position: absolute;
+    top: 55rem;
+}
