@@ -31,7 +31,7 @@ a:hover{
 
 
 body {
-    background-color: #000000;
+    size: 90%;
 }
 
 .container{
@@ -117,9 +117,25 @@ body{
 }
 .player1container{
     position: absolute;
-    top: 50rem;
+    top: 40rem;
+    left: 7rem;
+    color: cornflowerblue;
+    text-shadow: 0 0 4px red;
 }
 .player2container{
     position: absolute;
-    top: 55rem;
+    top: 40rem;
+    left: 90rem;
+    color: red;
+    text-shadow: 0 0 6px cornflowerblue;
+}
+#player1score{
+    font-size:30px;
+    color: cornflowerblue;
+    text-shadow: 0 0 4px red;
+}
+#player2score{
+    font-size:30px;
+    color: red;
+    text-shadow: 0 0 6px cornflowerblue;
 }
