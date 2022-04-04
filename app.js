@@ -103,7 +103,7 @@ function horizontalCheck(){
 }
 
 function verticalCheck(){
-    for (let col = 0; col < 8; col++){
+    for (let col = 0; col < 7; col++){
         for (let row = 0; row < 3; row++){
             if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col].style.backgroundColor,
                 tableRow[row+2].children[col].style.backgroundColor,tableRow[row+3].children[col].style.backgroundColor)){
