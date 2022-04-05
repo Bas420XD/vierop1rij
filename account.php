@@ -7,7 +7,7 @@ $username=$_SESSION["login_username"];
 $username2=$_SESSION["login_username2"];
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
     <title> Accounts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,12 +35,12 @@ $username2=$_SESSION["login_username2"];
                         { ?>
                             <div class="successmsg">Password has been changed...</div>
                         <?php } ?>
-                        <center>
+                        <div style="text-align: center;">
 
 
                             <p> Welcome! </p>
 
-                        </center>
+                        </div>
                     </div>
                     <div class="col"><p><a href="logout.php"><span style="color:red;">Log uit</span> </a></p>
                     </div>
