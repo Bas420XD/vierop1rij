@@ -21,7 +21,10 @@ const resetBtn = document.querySelector('.reset');
 var yangblue = document.getElementById("yangblue")
 var yangred = document.getElementById("yangred")
 var currentPlayer = 1;
+<<<<<<< HEAD
 let winner;
+=======
+>>>>>>> main
 playerTurn.textContent = `${player1} : zijn beurt`
 yangred.src = "yangredgrijs.png"
 
@@ -31,7 +34,11 @@ for (i = 0; i < tableData.length; i ++){
     tableData[i].addEventListener('click', (e) =>{
         console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
     });
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> main
 
 
 // Funtions
@@ -42,7 +49,11 @@ function changeColor(e){
     let row = [];
 
     for (i = 5; i > -1; i--){
+<<<<<<< HEAD
         if (tableRow[i].children[column].style.backgroundColor == 'white'){
+=======
+        if (tableRow[i].children[column].style.backgroundColor === 'white'){
+>>>>>>> main
             row.push(tableRow[i].children[column]);
             if (currentPlayer === 1){
                 row[0].style.backgroundColor = 'blue';
@@ -67,7 +78,11 @@ function changeColor(e){
                     return alert(`${player2} HEEFT GEWONNEN!!`);
                 }else if (drawCheck()){
                     playerTurn.textContent = 'GELIJKSPEL!';
+<<<<<<< HEAD
                     return alert('GELIJKSPEL!');
+=======
+                    return alert('GELIJKSPE!');
+>>>>>>> main
                 }else{
                     yangred.src = "yangredgrijs.png"
                     yangblue.src = "yanblauw.gif"
@@ -95,7 +110,11 @@ function horizontalCheck(){
     for (let row = 0; row < tableRow.length; row++){
         for (let col =0; col < 4; col++){
             if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor,tableRow[row].children[col+1].style.backgroundColor,
+<<<<<<< HEAD
                 tableRow[row].children[col+2].style.backgroundColor, tableRow[row].children[col+3].style.backgroundColor)){
+=======
+                tableRow[row].children[col+2].style.backgroundColor, tableRow[row].children[col+3].style.backgroundColor )){
+>>>>>>> main
                 return true;
             }
         }
@@ -108,7 +127,11 @@ function verticalCheck(){
             if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col].style.backgroundColor,
                 tableRow[row+2].children[col].style.backgroundColor,tableRow[row+3].children[col].style.backgroundColor)){
                 return true;
+<<<<<<< HEAD
             };
+=======
+            }
+>>>>>>> main
         }
     }
 }

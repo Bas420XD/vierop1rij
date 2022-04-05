@@ -9,9 +9,14 @@ while (!player2){
 var player2Color = 'red';
 
 
+<<<<<<< HEAD
 // alle variabelen
+=======
+>>>>>>> main
 
 
+let player1score = 0
+let player2score = 0
 var tableRow = document.getElementsByTagName('tr');
 var tableData = document.getElementsByTagName('td');
 var playerTurn = document.querySelector('.player-turn');
@@ -36,6 +41,10 @@ for (i = 0; i < tableData.length; i ++){
 
 
 function changeColor(e){
+<<<<<<< HEAD
+=======
+    
+>>>>>>> main
     let column = e.target.cellIndex;
     let row = [];
 
@@ -47,7 +56,13 @@ function changeColor(e){
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
                     playerTurn.textContent = `${player1} HEEFT GEWONNEN!!`;
                     playerTurn.style.color = player1Color;
+<<<<<<< HEAD
                     return alert(`${player1} HEEFT GEWONNEN!!`);
+=======
+                    player1score++;
+                    document.getElementById("player1score").innerHTML = player1score;
+                    return alert(`${player1} WINS!!`);
+>>>>>>> main
                 }else if (drawCheck()){
                     playerTurn.textContent = 'GELIJKSPEL!';
                     return alert('DRAW!');
@@ -62,6 +77,8 @@ function changeColor(e){
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
                     playerTurn.textContent = `${player2} HEEFT GEWONNEN!!!`;
                     playerTurn.style.color = player2Color;
+                    player2score++;
+                    document.getElementById("player2score").innerHTML = player2score;
                     return alert(`${player2} HEEFT GEWONNEN!!`);
                 }else if (drawCheck()){
                     playerTurn.textContent = 'GELIJKSPEL!';
@@ -152,3 +169,5 @@ resetBtn.addEventListener('click', () => {
     playerTurn.style.color = 'black';
     return (currentPlayer === 1 ? playerTurn.textContent = `${player1} : zijn beurt` : playerTurn.textContent = `${player2} : zijn beurt`);
 });
+document.getElementById("player1name").innerHTML = player1;
+document.getElementById("player2name").innerHTML = player2;
