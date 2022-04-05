@@ -9,7 +9,7 @@ while (!player2){
 var player2Color = 'red';
 
 
-// alle variabelen
+// Selectors
 
 
 var tableRow = document.getElementsByTagName('tr');
@@ -25,7 +25,7 @@ let winner;
 playerTurn.textContent = `${player1} : zijn beurt`
 yangred.src = "yangredgrijs.png"
 
-
+// Log cell coordinates when clicked
 
 for (i = 0; i < tableData.length; i ++){
     tableData[i].addEventListener('click', (e) =>{
@@ -34,8 +34,10 @@ for (i = 0; i < tableData.length; i ++){
 };
 
 
+// Funtions
 
 function changeColor(e){
+    // Get clicked column index
     let column = e.target.cellIndex;
     let row = [];
 
@@ -45,11 +47,11 @@ function changeColor(e){
             if (currentPlayer === 1){
                 row[0].style.backgroundColor = 'blue';
                 if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player1} HEEFT GEWONNEN!!`;
+                    playerTurn.textContent = `${player1} WINS!!`;
                     playerTurn.style.color = player1Color;
-                    return alert(`${player1} HEEFT GEWONNEN!!`);
+                    return alert(`${player1} WINS!!`);
                 }else if (drawCheck()){
-                    playerTurn.textContent = 'GELIJKSPEL!';
+                    playerTurn.textContent = 'DRAW!';
                     return alert('DRAW!');
                 }else{
                     yangred.src = "img/yang-ts-stance.gif"
@@ -65,7 +67,7 @@ function changeColor(e){
                     return alert(`${player2} HEEFT GEWONNEN!!`);
                 }else if (drawCheck()){
                     playerTurn.textContent = 'GELIJKSPEL!';
-                    return alert('GELIJKSPEl!');
+                    return alert('GELIJKSPEL!');
                 }else{
                     yangred.src = "yangredgrijs.png"
                     yangblue.src = "yanblauw.gif"
@@ -81,6 +83,7 @@ function changeColor(e){
 
 Array.prototype.forEach.call(tableData, (cell) => {
     cell.addEventListener('click', changeColor);
+    // Set all slots to white for new game.
     cell.style.backgroundColor = 'white';
 });
 
@@ -100,7 +103,7 @@ function horizontalCheck(){
 }
 
 function verticalCheck(){
-    for (let col = 0; col < 7; col++){
+    for (let col = 0; col < 8; col++){
         for (let row = 0; row < 3; row++){
             if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col].style.backgroundColor,
                 tableRow[row+2].children[col].style.backgroundColor,tableRow[row+3].children[col].style.backgroundColor)){
