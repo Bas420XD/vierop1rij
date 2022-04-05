@@ -9,7 +9,7 @@ while (!player2){
 var player2Color = 'red';
 
 
-// Selectors
+
 
 let player1score = 0
 let player2score = 0
@@ -26,7 +26,7 @@ let winner;
 playerTurn.textContent = `${player1} : zijn beurt`
 yangred.src = "yangredgrijs.png"
 
-// Log cell coordinates when clicked
+
 
 for (i = 0; i < tableData.length; i ++){
     tableData[i].addEventListener('click', (e) =>{
@@ -35,10 +35,9 @@ for (i = 0; i < tableData.length; i ++){
 };
 
 
-// Funtions
 
 function changeColor(e){
-    // Get clicked column index
+    
     let column = e.target.cellIndex;
     let row = [];
 
